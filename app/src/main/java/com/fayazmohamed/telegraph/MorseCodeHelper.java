@@ -12,14 +12,14 @@ public class MorseCodeHelper {
             's', 't', 'u', 'v', 'w', 'x',
             'y', 'z', '1', '2', '3', '4',
             '5', '6', '7', '8', '9', '0'));
-    static final ArrayList<String> code = new ArrayList<>(Arrays.asList("/ ", ".- ", "-... ", "-.-. ", "-.. ",  ". ",
-            "..-. ", "--. ",  ".... ", ".. ",   ".--- ",
-            "-.- ",  ".-.. ", "-- ",   "-. ",   "--- ",
-            ".--. ", "--.- ", ".-. ",  "... ",  "- ",
-            "..- ",  "...- ", ".-- ",  "-..- ", "-.-- ",
-            "--.. ",
+    static final ArrayList<String> code = new ArrayList<>(Arrays.asList("/", ".-", "-...", "-.-.", "-..",  ".",
+            "..-.", "--.",  "....", "..",   ".---",
+            "-.-",  ".-..", "--",   "-.",   "---",
+            ".--.", "--.-", ".-.",  "...",  "-",
+            "..-",  "...-", ".--",  "-..-", "-.--",
+            "--..",
             /* Numbers */
-            ".---- ","..--- ","...-- ","....- ","..... ","-.... ","--... ","---.. ","----. ","----- ")
+            ".----","..---","...--","....-",".....","-....","--...","---..","----.","-----")
             );
 
 
@@ -38,15 +38,15 @@ public class MorseCodeHelper {
     }
 
     public static String convertToLetter(ArrayList<String> inp){
-        String output = "";
+        StringBuilder output = new StringBuilder();
         if (inp != null){
             for (String s : inp){
                 int i = code.indexOf(s.toLowerCase());
                 if (i != -1 && i < letter.size()){
-                    output = output + letter.get(i);
+                    output.append(letter.get(i));
                 }
             }
         }
-        return output;
+        return output.toString();
     }
 }
